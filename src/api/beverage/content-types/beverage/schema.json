@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "beverages",
+  "info": {
+    "singularName": "beverage",
+    "pluralName": "beverages",
+    "displayName": "Beverage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "openingHours": {
+      "displayName": "Opening Hours",
+      "type": "component",
+      "repeatable": false,
+      "component": "beverage-info.opening-hours"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "beverages"
+    },
+    "avgPrice": {
+      "type": "decimal"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "beverage"
+    }
+  }
+}

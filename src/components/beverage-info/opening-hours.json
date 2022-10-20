@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_beverage_info_opening_hours",
+  "info": {
+    "displayName": "Opening Hours",
+    "icon": "business-time",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "hours": {
+      "type": "string"
+    },
+    "days": {
+      "type": "string"
+    }
+  }
+}
